@@ -1,0 +1,68 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: aw-db
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: aw-db
+    spec:
+      containers:
+      - name: aw-db
+        image: postgres
+        ports:
+        - containerPort: 5432
+          name: postgres
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aw-db
+spec:
+  ports:
+  - port: 5432
+  selector:
+    app: aw-db
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: aw-web
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: aw-web
+    spec:
+      containers:
+      - name: aw-web
+        image: hgaard/awesomeweather:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+        env:
+        - name: REDIS
+          value: "aw-db"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aw-web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: aw-web

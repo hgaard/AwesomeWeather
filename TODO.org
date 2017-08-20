@@ -1,0 +1,34 @@
+# Awesome weather tasks
+* Domain
+** DONE Config for connectionstring
+** DONE Dependency injection [autofac](http://docs.autofac.org/en/latest/integration/aspnetcore.html)
+** DONE Logging
+** TODO clock injection
+** TODO Inject csv classes
+** DONE more specific methods in weatherService
+** TODO Split in and oit measurements to separate measurements
+*** TODO By interval
+*** TODO since/?
+*** TODO By measurement type
+** TODO Test    
+* Web
+** DONE Upload of data
+*** TODO Error handling
+** TODO Plot temp
+** TODO Layout of site
+** TODO Login w Auth0
+* Deployment
+** TODO Dockerrize
+*** TODO Dockerfile
+*** TODO Docker compose
+** TODO DNS
+* IDEAS
+** Deploy everywhere
+*** Azure
+*** Digital Ocean
+*** AWS
+*** Google Cloud
+** Kubernetes
+*** Azure
+*** Google Cloud
+*** Other?
