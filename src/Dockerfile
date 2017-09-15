@@ -1,5 +1,7 @@
 FROM microsoft/aspnetcore-build:lts
 COPY . /app
+WORKDIR /app/web
+RUN ["npm", "install"]
 WORKDIR /app
 RUN ["dotnet", "restore"]
 RUN ["dotnet", "build"]
