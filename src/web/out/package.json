@@ -30,11 +30,5 @@
     "url-loader": "0.5.9",
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.2"
-  },
-  "dependencies": {
-    "chart.js": "^1.1.1",
-    "react-chartjs": "^0.8.0",
-    "react-chartjs-2": "^2.1.0",
-    "react-dropzone": "^3.13.2"
   }
 }

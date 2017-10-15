@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Serilog;
 using TinyCsvParser;
 
@@ -19,10 +18,10 @@ namespace Domain
     {
         private WeatherContext weatherContext;
         private ILogger logger;
-        public WeatherService(WeatherContext context, ILogger logger)
+        public WeatherService(WeatherContext context)
         {
             weatherContext = context;
-            this.logger = logger;
+            this.logger = Log.Logger;
         }
         public void Add(Measurement measurement)
         {
@@ -61,7 +60,7 @@ namespace Domain
 
         public void Import(String file)
         {
-            var parserOptions = new CsvParserOptions(true, new[] { '\t' });
+            var parserOptions = new CsvParserOptions(true, '\t');
             var readerOptions = new CsvReaderOptions(new[] { Environment.NewLine });
             var csvMapper = new MeasurementMapping();
             var csvParser = new CsvParser<Measurement>(parserOptions, csvMapper);

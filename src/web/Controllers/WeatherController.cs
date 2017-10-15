@@ -15,10 +15,10 @@ namespace web.Controllers
     {
         private IWeatherService weatherService;
         private ILogger logger;
-        public WeatherController(IWeatherService weatherService, ILogger logger)
+        public WeatherController(IWeatherService weatherService)
         {
             this.weatherService = weatherService;
-            this.logger = logger;
+            this.logger = Log.Logger;
         }
         [HttpGet("[action]")]
         public IEnumerable<Measurement> Latest(int count = 100)
