@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router';
 import 'isomorphic-fetch';
 import { Line } from 'react-chartjs-2';
 
@@ -7,7 +8,7 @@ interface WeatherState {
     loading: boolean;
 }
 
-export class Home extends React.Component<any, WeatherState> {
+export class Home extends React.Component<RouteComponentProps<{}>, WeatherState> {
     constructor() {
         super();
         this.state = { measurements: [], loading: true };
@@ -37,10 +38,6 @@ export class Home extends React.Component<any, WeatherState> {
         </div>
     }
 
-    private static renderWeatherChart(measurements: Measurement[]) {
-        const data = measurements.map(x => {return x.tempOut})
-        return <Line data={data} width={600} height={250}/>
-    }
 
     private static renderWeatherTable(forecasts: Measurement[]) {
         return <table className='table'>

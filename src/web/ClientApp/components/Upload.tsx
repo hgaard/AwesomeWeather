@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router';
 import Dropzone from 'react-dropzone'
 
 interface DropState {
     files: File[];
 }
 
-export class Upload extends React.Component<any, DropState> {
+export class Upload extends React.Component<RouteComponentProps<{}>, DropState> {
     constructor() {
         super();
         this.state = { files: []};

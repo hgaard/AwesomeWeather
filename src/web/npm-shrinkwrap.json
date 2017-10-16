@@ -4,6 +4,11 @@
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
+    "@types/chart.js": {
+      "version": "2.6.8",
+      "resolved": "https://registry.npmjs.org/@types/chart.js/-/chart.js-2.6.8.tgz",
+      "integrity": "sha512-edl/beIQzzp9Lo5BAT6ZLU+pes8UsYh22IEZJ1Et1VF+DgK1nUgT+0UR1Tk/LGvzP7M2kYLymA/QZtpWyrAugw=="
+    },
     "@types/history": {
       "version": "4.6.0",
       "resolved": "https://registry.npmjs.org/@types/history/-/history-4.6.0.tgz",
@@ -13,14 +18,21 @@
     "@types/react": {
       "version": "15.0.35",
       "resolved": "https://registry.npmjs.org/@types/react/-/react-15.0.35.tgz",
-      "integrity": "sha512-SDvfa+9dIq7RBTBiPhV0V+NeLT16RSFjcsjcyIJUBLlHpOatja1mHuOlI+P7tJ7fZZeBd8CV5pHxmFt4MdpyGQ==",
-      "dev": true
+      "integrity": "sha512-SDvfa+9dIq7RBTBiPhV0V+NeLT16RSFjcsjcyIJUBLlHpOatja1mHuOlI+P7tJ7fZZeBd8CV5pHxmFt4MdpyGQ=="
     },
     "@types/react-dom": {
       "version": "15.5.1",
       "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-15.5.1.tgz",
       "integrity": "sha512-4c+e/QPfvSa48YhgGOcQWoHishTo6BuJqka0Bh8qeLdnK1jS+1Nz8W/w1G17AIjtLxONYFUqmi8qyt+8p/yMFA==",
       "dev": true,
+      "requires": {
+        "@types/react": "15.0.35"
+      }
+    },
+    "@types/react-dropzone": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/@types/react-dropzone/-/react-dropzone-4.1.0.tgz",
+      "integrity": "sha512-dJ7oIzcafv9LXMVF/dT1sFthzpZth6SRyDVulAE1MWsO/kkCO5dwfFpQKqCR01a55N/UTbFoVkp5F0areEcPNQ==",
       "requires": {
         "@types/react": "15.0.35"
       }
@@ -4544,9 +4556,9 @@
       }
     },
     "react-dropzone": {
-      "version": "3.13.4",
-      "resolved": "https://registry.npmjs.org/react-dropzone/-/react-dropzone-3.13.4.tgz",
-      "integrity": "sha1-hNomgVxAM5aRxJtFRMLvehaRLMw=",
+      "version": "4.2.0",
+      "resolved": "https://registry.npmjs.org/react-dropzone/-/react-dropzone-4.2.0.tgz",
+      "integrity": "sha512-U287WcLh5kYdELOzenLOle0aSZ71a9TOruQHAFRfXVPSMHaJubOm0pvkkvBv6kvX0+mjhz+x4xPype1RxnuIqw==",
       "requires": {
         "attr-accept": "1.1.0",
         "prop-types": "15.5.10"

@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router';
 import { Line } from 'react-chartjs-2';
 
 
 
-export class Chart extends React.Component<any, any> {
+export class Chart extends React.Component<RouteComponentProps<{}>, any> {
   constructor() {
       super();
       

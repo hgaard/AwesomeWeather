@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router-dom';
 
-export class NavMenu extends React.Component<any, void> {
+export class NavMenu extends React.Component<{}, {}> {
     public render() {
         return <div className='main-nav'>
                 <div className='navbar navbar-inverse'>
@@ -12,26 +12,26 @@ export class NavMenu extends React.Component<any, void> {
                         <span className='icon-bar'></span>
                         <span className='icon-bar'></span>
                     </button>
-                    <Link className='navbar-brand' to={ '/' }>Awesome weather</Link>
+                    <Link className='navbar-brand' to={ '/' }>reactTmp</Link>
                 </div>
                 <div className='clearfix'></div>
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
                         <li>
-                            <Link to={ '/' } activeClassName='active'>
+                            <NavLink to={ '/' } exact activeClassName='active'>
                                 <span className='glyphicon glyphicon-home'></span> Home
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to={ '/upload' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Upload
-                            </Link>
+                            <NavLink to={ '/counter' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-education'></span> Counter
+                            </NavLink>
                         </li>
-                        {/* <li>
-                            <Link to={ '/chart' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Chart
-                            </Link>
-                        </li> */}
+                        <li>
+                            <NavLink to={ '/fetchdata' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> Fetch data
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
